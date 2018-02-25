@@ -6,6 +6,12 @@
     <servlet>
         <servlet-name>CXF</servlet-name>
         <servlet-class>org.apache.cxf.cdi.CXFCdiServlet</servlet-class>
+        <!-- with this commented out, services wont work -->
+        <!--<init-param>-->
+            <!--<param-name>transportId</param-name>-->
+            <!--<param-value>http://cxf.apache.org/transports/http/sse</param-value>-->
+        <!--</init-param>-->
+        <async-supported>true</async-supported>
     </servlet>
     <servlet-mapping>
         <servlet-name>CXF</servlet-name>

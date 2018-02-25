@@ -1,7 +1,6 @@
 package com.mycompany.rest;
 
 import org.apache.cxf.cdi.extension.JAXRSServerFactoryCustomizationExtension;
-import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
 import org.apache.cxf.jaxrs.provider.StreamingResponseProvider;
 import org.apache.cxf.jaxrs.reactor.client.ReactorInvokerProvider;
@@ -30,6 +29,5 @@ public class MyAppFeature implements Feature, JAXRSServerFactoryCustomizationExt
         StreamingResponseProvider<JsonObject> streamProvider = new StreamingResponseProvider<>();
         streamProvider.setProduceMediaTypes(Collections.singletonList("application/json"));
         jaxrsServerFactoryBean.setProvider(streamProvider);
-        jaxrsServerFactoryBean.getOutInterceptors().add(new LoggingOutInterceptor());
     }
 }
